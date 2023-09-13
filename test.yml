@@ -1,0 +1,16 @@
+---
+- name: Prueba Lightspeed
+  ansible.builtin.package:
+    name:
+      - light-speed-utils
+    state: present
+  become: true
+  vars: var1
+
+  tasks:
+  - name: install Apache
+    community.general.pacman:
+      name:
+        - apache
+      state: present
+    become: true
