@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#https://medium.com/@jeesmon/steps-to-install-an-operator-from-command-line-in-openshift-9473039bc92e
 export USER=kubeadmin
 export PASSWORD=T4m4r1nd018
 export OPERATOR_NAME=local-storage-operator
@@ -40,3 +42,5 @@ spec: \n \
   sourceNamespace: ${CATALOG_SOURCE_NAMESPACE} \n \
   startingCSV: ${CSV}"
 EOF
+
+oc apply -f local-storage-operator.yaml
